@@ -4,23 +4,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
+
     private WebDriver driver;
 
-    // Localizadores
     private By userField = By.id("user-name");
     private By passField = By.id("password");
     private By loginBtn = By.id("login-button");
     private By errorMessage = By.cssSelector("[data-test='error']");
 
-    // Constructor
+
+    //Constructor
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    // Acciones
-    public void ingresarCredenciales(String user, String pass) {
+    //Métodos
+    public void ingresarUsuario(String user) {
         driver.findElement(userField).clear();
         driver.findElement(userField).sendKeys(user);
+    }
+
+    public void ingresarPassword(String pass) {
         driver.findElement(passField).clear();
         driver.findElement(passField).sendKeys(pass);
     }
@@ -30,7 +34,8 @@ public class LoginPage {
     }
 
     public void login(String user, String pass) {
-        ingresarCredenciales(user, pass);
+        ingresarUsuario(user);
+        ingresarPassword(pass);
         clickLogin();
     }
 
