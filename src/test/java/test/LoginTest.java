@@ -22,7 +22,6 @@ public class LoginTest {
                 driver.manage().window().maximize();
 
                 driver.get("https://www.saucedemo.com/");
-
                 loginPage = new LoginPage(driver);
         }
 
