@@ -32,6 +32,7 @@ public class LoginTest {
                 }
         }
 
+
         @Test
         void loginCorrecto() {
                 loginPage.login("standard_user", "secret_sauce");
