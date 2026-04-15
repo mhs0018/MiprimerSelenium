@@ -19,11 +19,14 @@ public class LoginPage {
     }
 
     //Métodos
+
+    //Usuario
     public void ingresarUsuario(String user) {
         driver.findElement(userField).clear();
         driver.findElement(userField).sendKeys(user);
     }
 
+    //Contraseña
     public void ingresarPassword(String pass) {
         driver.findElement(passField).clear();
         driver.findElement(passField).sendKeys(pass);
